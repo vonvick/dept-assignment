@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 import ButtonComponent from '../Button'
-import RowContainer from '../RowContainer';
-import ColumnContainer from '../ColumnContainer';
 
 interface HeaderProps {
   backgroundImage: string;
