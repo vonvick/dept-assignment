@@ -10,13 +10,6 @@ interface HeaderProps {
 };
 
 const NavBar = styled.nav<HeaderProps>`
-  height: 400px;
-  @media only screen and (min-width: 900px) {
-    height: 600px;
-  }
-  @media only screen and (min-width: 1200px) {
-    height: 800px;
-  }
   background: url(${ props => props.backgroundImage}) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -48,22 +41,34 @@ const NavBar = styled.nav<HeaderProps>`
       font-size: 16px;
     }
   }
-  .jumbotron-container {
-    letter-spacing: normal;
-    line-height: 1;
-    font-size: 170px;
-    min-height: 250px;
-    margin-top: 100px;
-    @media only screen and (min-width: 900px) {
-      font-size: 400px;
+  .header-jumbotron {
+    height: 100%;
+    .jumbotron-container {
+      letter-spacing: normal;
+      line-height: 1;
+      font-size: 250px;
+      display: flex;
+      align-items: center;
+      @media only screen and (min-width: 900px) {
+        font-size: 400px;
+      }
     }
   }
   .view-case-wrapper {
     width: 100%;
-    @media only screen and (min-width: 600px) {
-      width: 20%;
-      float: right;
-      margin-top: 100px;
+    margin-top: 50px;
+    clear: both;
+    position: relative;
+    top: 100px;
+    @media only screen and (min-width: 900px) {
+      height: 200px;
+    }
+    .button-item {
+      width: 100%;
+      @media only screen and (min-width: 900px) {
+        width: 20%;
+        float: right;
+      }
     }
   }
 `;
@@ -90,11 +95,13 @@ const Header = () => {
       <div className="view-case-container">
         <div className="container">
           <div className="view-case-wrapper">
-            <ButtonComponent
-              color="white"
-              background="black">
-              LEARN MORE
-            </ButtonComponent>
+            <div className="button-item">
+              <ButtonComponent
+                color="white"
+                background="black">
+                LEARN MORE
+              </ButtonComponent>
+            </div>
           </div>
         </div>
       </div>
