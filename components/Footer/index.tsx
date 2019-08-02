@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const StyledFooter = styled.footer`
   background: #000000;
-  position: relative;
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
@@ -16,7 +16,7 @@ type MenuItem = {
 };
 
 interface FooterMenuItems {
-  items: MenuItem[]; 
+  items: MenuItem[];
 };
 
 const Footer = (props: FooterMenuItems) => {
