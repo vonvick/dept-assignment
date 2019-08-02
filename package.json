@@ -7,10 +7,15 @@
     "start": "next start"
   },
   "dependencies": {
+    "@types/node": "^12.6.8",
+    "@types/react": "^16.8.24",
+    "@types/react-dom": "^16.8.5",
+    "@types/styled-components": "^4.1.18",
     "next": "latest",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "styled-components": "^4.0.0"
+    "styled-components": "^4.0.0",
+    "typescript": "^3.5.3"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.8.0"
