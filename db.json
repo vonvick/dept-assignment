@@ -1,0 +1,32 @@
+{
+  "data": [
+    {
+      "client": "Philips",
+      "title": "Beautiful design meet innovative technology",
+      "image_name": "philips",
+      "industry": "technology",
+      "category": "strategy"
+    },
+    {
+      "client": "Florensis",
+      "title": "Rethinking the entire online ecosystem",
+      "image_name": "florensis",
+      "industry": "technology",
+      "category": "digital_marketing"
+    },
+    {
+      "client": "Gemeentemuseum",
+      "title": "A 100 years of Mondriaan & De Stijl",
+      "image_name": "gemeentemuseum",
+      "industry": "marketing",
+      "category": "digital_marketing"
+    },
+    {
+      "client": "Be Lighting",
+      "title": "Delivering clarity on a global scale",
+      "image_name": "lightning",
+      "industry": "marketing",
+      "category": "strategy"
+    }
+  ]
+}
