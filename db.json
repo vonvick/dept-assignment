@@ -1,11 +1,25 @@
 {
   "data": [
     {
-      "client": "Philips",
-      "title": "Beautiful design meet innovative technology",
-      "image_name": "philips",
-      "industry": "technology",
-      "category": "strategy"
+      "client": "arla",
+      "title": "Swipe to find your next holiday destination",
+      "image_name": "arla",
+      "industry": "tourism",
+      "category": "branding"
+    },
+    {
+      "client": "Bol.com",
+      "title": "A summer island in the Netherlands",
+      "image_name": "bolcom",
+      "industry": "tourism",
+      "category": "branding"
+    },
+    {
+      "client": "chocomel",
+      "title": "A campaign for the limited edition letter packs",
+      "image_name": "chocomel",
+      "industry": "marketing",
+      "category": "branding"
     },
     {
       "client": "Florensis",
@@ -18,8 +32,36 @@
       "client": "Gemeentemuseum",
       "title": "A 100 years of Mondriaan & De Stijl",
       "image_name": "gemeentemuseum",
+      "industry": "tourism",
+      "category": "branding"
+    },
+    {
+      "client": "jbl",
+      "title": "Live like a champion with Jerome Boateng",
+      "image_name": "jbl",
+      "industry": "technology",
+      "category": "branding"
+    },
+    {
+      "client": "Kempen",
+      "title": "Not some average banking website",
+      "image_name": "bolcom",
+      "industry": "finance",
+      "category": "branding"
+    },
+    {
+      "client": "koninklijke bibliotheek",
+      "title": "Innovative SEO and content strategy for Zalando",
+      "image_name": "koninklijke-bibliotheek",
       "industry": "marketing",
-      "category": "digital_marketing"
+      "category": "strategy"
+    },
+    {
+      "client": "liberty global",
+      "title": "Delivering complex commerce solution",
+      "image_name": "liberty-global",
+      "industry": "ecommerce",
+      "category": "strategy"
     },
     {
       "client": "Be Lighting",
@@ -27,6 +69,27 @@
       "image_name": "lightning",
       "industry": "marketing",
       "category": "strategy"
+    },
+    {
+      "client": "Philips",
+      "title": "Beautiful design meet innovative technology",
+      "image_name": "philips",
+      "industry": "technology",
+      "category": "strategy"
+    },
+    {
+      "client": "tui",
+      "title": "Swipe to find your next holiday destination",
+      "image_name": "tui",
+      "industry": "tourism",
+      "category": "branding"
+    },
+    {
+      "client": "zalando",
+      "title": "Innovative SEO and content strategy for Zalando",
+      "image_name": "zalando",
+      "industry": "ecommerce",
+      "category": "digital_marketing"
     }
   ]
 }
