@@ -1,7 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const ButtonItem = styled.button`
+interface ButtonProps {
+  background: string;
+  disabled?: boolean;
+  color: string;
+}
+
+const ButtonComponent = styled.button<ButtonProps>`
   display: inline-block;
   background-color: ${props => props.background};
   color: ${ props => props.color};
@@ -11,18 +17,7 @@ const ButtonItem = styled.button`
   font-weight: 600;
   font-size: 0.95rem;
   padding: 0.75rem 1.5rem;
+  width: 100%;
 `;
-
-const ButtonComponent = props => {
-  const { children, background, disabled, color } = props;
-  return (
-    <ButtonItem
-      disabled={disabled}
-      color={color}
-      background={background}>
-      {children}
-    </ButtonItem>
-  );
-};
 
 export default ButtonComponent;
