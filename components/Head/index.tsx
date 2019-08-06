@@ -33,6 +33,31 @@ const Head = () => {
           padding-right: 10px;
           clear: both
         }
+
+        .cases-container {
+          margin-top: 50px;
+          position: relative;
+          bottom: 140px;
+        }
+        h1 {
+          font-size: 32px;
+        }
+        h2 {
+          font-size: 28px;
+        }
+        h3 {
+          font-size: 24px;
+        }
+        h4 {
+          font-size: 22px;
+        }
+        h5 {
+          font-size: 20px;
+        }
+        h6 {
+          font-size: 18px;
+        }
+
       `}</style>
     </NextHead>
   )
