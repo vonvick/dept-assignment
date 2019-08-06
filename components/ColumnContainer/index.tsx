@@ -19,7 +19,7 @@ const ColumnContainer = styled.div<ColumnProps>`
   padding-left: 15px;
   padding-right: 15px;
   float: left;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 
   ${({ xs }) => (xs ? getWidthString(xs) : "max-width: 100%; flex: 0 0 100%")};
 
