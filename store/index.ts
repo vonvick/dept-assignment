@@ -1,5 +1,6 @@
 import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
+import thunkMiddleware from 'redux-thunk';
 import _ from 'lodash';
 import {
   FETCH_DATA_BEGIN,
@@ -9,7 +10,7 @@ import {
   PERFORM_DATA_FILTER
 } from './action-types';
 
-interface AppState {
+export interface AppState {
   cases: any[],
   industries: any[],
   categories: any[],
@@ -17,7 +18,7 @@ interface AppState {
   loading: boolean
 }
 
-const appInitialState: AppState = {
+export const appInitialState: AppState = {
   cases: [],
   industries: [],
   categories: [],
@@ -89,6 +90,6 @@ export function initializeStore (initialState = appInitialState) {
   return createStore(
     reducer,
     initialState,
-    composeWithDevTools(applyMiddleware())
+    composeWithDevTools(applyMiddleware(thunkMiddleware))
   )
 }

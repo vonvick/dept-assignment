@@ -1,10 +1,10 @@
 import App, { Container } from 'next/app'
-import { NextPageContext } from 'next'
+import { NextPage, NextPageContext } from 'next';
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import withReduxStore from '../lib/with-redux-store'
 import { Provider } from 'react-redux'
-import { Dispatch } from 'redux';
+import { initializeStore } from '../store';
 
 const theme = {
   colors: {
@@ -12,19 +12,13 @@ const theme = {
   }
 }
 
-export interface AppInitialProps {}
-
-export interface NextPageContextWithRedux extends NextPageContext {
-  reduxStore?: {
-    dispatch: (prop?: any) => Promise<Dispatch>;
-  };
-}
-
-interface IAppp {
+interface IRedux {
   reduxStore?: any;
 }
 
-class MyApp extends App<IAppp> {
+export type NextPageContextWithRedux = NextPage & NextPageContext & IRedux;
+
+class MyApp extends App<NextPageContextWithRedux> {
   render () {
     const { Component, pageProps, reduxStore } = this.props
     return (

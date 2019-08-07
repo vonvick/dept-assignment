@@ -13,7 +13,7 @@ export const fetchDataError = createAction(FETCH_DATA_ERROR);
 export const fetchDataSuccess = createAction(FETCH_DATA_SUCCESS);
 export const setFilterCriteria = createAction(SET_FILTER_CRITERIA);
 
-export const getCasesData = () => async (dispatch: Dispatch): Promise<any> => {
+export const getCasesData = () => async(dispatch: Dispatch): Promise<any> => {
   try {
     dispatch(fetchDataBegin());
     const result = await fetchData();
