@@ -7,11 +7,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "@types/lodash": "^4.14.136",
-    "@types/node": "^12.6.8",
-    "@types/react": "^16.8.24",
-    "@types/react-dom": "^16.8.5",
-    "@types/react-redux": "^7.1.1",
     "@types/styled-components": "^4.1.18",
     "lodash": "^4.17.15",
     "next": "latest",
@@ -26,6 +21,12 @@
     "typescript": "^3.5.3"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.136",
+    "@types/node": "^12.6.8",
+    "@types/react": "^16.8.24",
+    "@types/react-dom": "^16.8.5",
+    "@types/react-redux": "^7.1.1",
+    "@types/redux-actions": "^2.6.1",
     "babel-plugin-styled-components": "^1.8.0"
   },
   "license": "ISC"
