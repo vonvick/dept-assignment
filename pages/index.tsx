@@ -24,16 +24,11 @@ const IndexPage = (props: AppState) => {
 };
 
 IndexPage.getInitialProps = async({ reduxStore }: NextPageContextWithRedux) => {
-  reduxStore.dispatch(getCasesData())
+  const cases = await reduxStore.dispatch(getCasesData())
+  return { cases: cases };
 }
 
-
-
-const mapDispatchToProps = { getCasesData }
-const mapStateToProps = (state: AppState) => {
-  return state;
-}
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  null,
+  null
 )(IndexPage)

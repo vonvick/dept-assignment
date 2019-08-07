@@ -1,5 +1,6 @@
 import { createAction } from 'redux-actions';
 import { Dispatch } from 'redux';
+import request from '../lib/request';
 
 import {
   FETCH_DATA_BEGIN,
@@ -13,15 +14,15 @@ export const fetchDataError = createAction(FETCH_DATA_ERROR);
 export const fetchDataSuccess = createAction(FETCH_DATA_SUCCESS);
 export const setFilterCriteria = createAction(SET_FILTER_CRITERIA);
 
-export const getCasesData = () => async(dispatch: Dispatch): Promise<any> => {
+export const getCasesData = () => async(dispatch: Dispatch) => {
   try {
     dispatch(fetchDataBegin());
     const result = await fetchData();
 
-    dispatch(fetchDataSuccess(result.json()));
-    dispatch(setFilterCriteria(result.json()));
+    dispatch(fetchDataSuccess(result));
+    dispatch(setFilterCriteria(result));
 
-    return result.json();
+    return result;
   } catch (error) {
     dispatch(fetchDataError(error))
   }
@@ -35,7 +36,7 @@ const handleErrors = (response: any) => {
 };
 
 const fetchData = () => {
-  return fetch('https://my-json-server.typicode.com/vonvick/dept-assignment/data')
+  return request('https://my-json-server.typicode.com/vonvick/dept-assignment/data')
     .then(handleErrors)
     .then(res => res.json());
 }
