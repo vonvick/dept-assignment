@@ -15,7 +15,14 @@ const StyledFilter = styled.div`
   }
 `;
 
-const FilterComponent = () => {
+interface FilterProps {
+  industries: string[],
+  categories: string[]
+}
+
+const FilterComponent = (props: FilterProps) => {
+  const { industries, categories } = props;
+
   return (
     <StyledFilter>
       <div className="container">
