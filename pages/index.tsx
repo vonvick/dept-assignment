@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { filterCases } from '../store';
+import { getCasesData } from '../store/actions';
 import Layout from '../components/Layout';
 import Head from '../components/Head';
 import CardGridComponent from '../components/CardGridComponent';
@@ -20,7 +20,7 @@ const Index = () => {
   );
 };
 
-const mapDispatchToProps = { filterCases }
+const mapDispatchToProps = { getCasesData }
 export default connect(
   null,
   mapDispatchToProps
