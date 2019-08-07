@@ -3,91 +3,91 @@
     {
       "client": "arla",
       "title": "Swipe to find your next holiday destination",
-      "image_name": "arla",
+      "imageName": "arla",
       "industry": "tourism",
       "category": "branding"
     },
     {
       "client": "Bol.com",
       "title": "A summer island in the Netherlands",
-      "image_name": "bolcom",
+      "imageName": "bolcom",
       "industry": "tourism",
       "category": "branding"
     },
     {
       "client": "chocomel",
       "title": "A campaign for the limited edition letter packs",
-      "image_name": "chocomel",
+      "imageName": "chocomel",
       "industry": "marketing",
       "category": "branding"
     },
     {
       "client": "Florensis",
       "title": "Rethinking the entire online ecosystem",
-      "image_name": "florensis",
+      "imageName": "florensis",
       "industry": "technology",
       "category": "digital_marketing"
     },
     {
       "client": "Gemeentemuseum",
       "title": "A 100 years of Mondriaan & De Stijl",
-      "image_name": "gemeentemuseum",
+      "imageName": "gemeentemuseum",
       "industry": "tourism",
       "category": "branding"
     },
     {
       "client": "jbl",
       "title": "Live like a champion with Jerome Boateng",
-      "image_name": "jbl",
+      "imageName": "jbl",
       "industry": "technology",
       "category": "branding"
     },
     {
       "client": "Kempen",
       "title": "Not some average banking website",
-      "image_name": "bolcom",
+      "imageName": "bolcom",
       "industry": "finance",
       "category": "branding"
     },
     {
       "client": "koninklijke bibliotheek",
       "title": "Innovative SEO and content strategy for Zalando",
-      "image_name": "koninklijke-bibliotheek",
+      "imageName": "koninklijke-bibliotheek",
       "industry": "marketing",
       "category": "strategy"
     },
     {
       "client": "liberty global",
       "title": "Delivering complex commerce solution",
-      "image_name": "liberty-global",
+      "imageName": "liberty-global",
       "industry": "ecommerce",
       "category": "strategy"
     },
     {
       "client": "Be Lighting",
       "title": "Delivering clarity on a global scale",
-      "image_name": "lightning",
+      "imageName": "lightning",
       "industry": "marketing",
       "category": "strategy"
     },
     {
       "client": "Philips",
       "title": "Beautiful design meet innovative technology",
-      "image_name": "philips",
+      "imageName": "philips",
       "industry": "technology",
       "category": "strategy"
     },
     {
       "client": "tui",
       "title": "Swipe to find your next holiday destination",
-      "image_name": "tui",
+      "imageName": "tui",
       "industry": "tourism",
       "category": "branding"
     },
     {
       "client": "zalando",
       "title": "Innovative SEO and content strategy for Zalando",
-      "image_name": "zalando",
+      "imageName": "zalando",
       "industry": "ecommerce",
       "category": "digital_marketing"
     }
