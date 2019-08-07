@@ -67,9 +67,9 @@ export const reducer = (state = appInitialState, action: any) => {
         cases: payload
       }
     case SET_FILTER_CRITERIA:
-      const filterData = payload.reduce((curr: any, acc: any) => {
-        acc.category.push(curr.category);
-        acc.industry.push(curr.industry);
+      const filterData = payload.reduce((acc: any, curr: any) => {
+        acc.categories.push(curr.category);
+        acc.industries.push(curr.industry);
         return acc;
       }, { categories: [], industries: []});
 
