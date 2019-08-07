@@ -36,8 +36,6 @@ const Head = () => {
 
         .cases-container {
           margin-top: 50px;
-          position: relative;
-          bottom: 140px;
         }
         h1 {
           font-size: 32px;
