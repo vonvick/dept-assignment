@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import Router from 'next/router';
 import { connect } from 'react-redux'
 import { Dispatch } from 'redux';
 import { getCasesData, performDataFilter } from '../store/actions';
@@ -8,19 +9,29 @@ import CardGridComponent from '../components/CardGridComponent';
 import FilterComponent from '../components/FilterComponent';
 import {NextPageContextWithRedux} from './_app'
 
-import { AppState, getFilteredCases } from '../store';
+import { getFilteredCases } from '../store';
 
-interface IndexPageProps {
-  industries: string[],
-  categories: string[],
-  cases: any[],
-  error: string,
-  loading: boolean,
-  performDataFilter: (value: string, type: string) => Promise<any>
-}
+// types
+import { AppState } from '../types/state';
+import { IndexPageProps } from '../types/page';
 
 const IndexPage = (props: IndexPageProps) => {
-  const { industries, categories, cases, error, loading, performDataFilter } = props;
+  const {
+    industries,
+    categories,
+    cases,
+    error,
+    loading,
+    performDataFilter,
+    filtersApplied
+  } = props;
+
+  useEffect(() => {
+    Router.push({
+      pathname: '/',
+      query: filtersApplied
+    })
+  }, [filtersApplied])
 
   return (
     <Layout>
@@ -36,22 +47,25 @@ const IndexPage = (props: IndexPageProps) => {
   );
 };
 
-IndexPage.getInitialProps = async({ reduxStore }: NextPageContextWithRedux) => {
-  await reduxStore.dispatch(getCasesData())
+IndexPage.getInitialProps = async({
+  reduxStore: {
+    dispatch
+  }}: NextPageContextWithRedux) => {
+  await dispatch(getCasesData())
+
   return {};
 }
 
 const mapStateToProps = ((state: AppState) => {
   return {
     ...state,
-    cases: getFilteredCases(state),
+    cases: getFilteredCases(state)
   };
 })
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  performDataFilter: (value: string, type: string): Promise<any> => {
-    return dispatch(performDataFilter({ value, type }) as any)
-  }
+  performDataFilter: (value: string, type: string): Promise<any> =>
+    dispatch(performDataFilter({ value, type }) as any)
 });
 
 export default connect(
