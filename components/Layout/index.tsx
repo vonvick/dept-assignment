@@ -1,9 +1,18 @@
 import Header from '../Header';
 import Footer from '../Footer';
+import styled from 'styled-components';
 
 interface LayoutProps {
   children: any;
 }
+
+const IndexLayout = styled.div`
+  .contact-text {
+    font-weight: 400;
+    font-size: 42px;
+    margin: 5px 0;
+  }
+`;
 
 const footerMenuItems = [
   {
@@ -36,11 +45,11 @@ const Layout = (props: LayoutProps) => {
   const { children } = props;
 
   return (
-    <div>
+    <IndexLayout>
       <Header/>
       {children}
       <Footer items={footerMenuItems}/>
-    </div>
+    </IndexLayout>
   );
 };
 

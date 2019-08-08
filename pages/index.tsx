@@ -3,12 +3,17 @@ import Router from 'next/router';
 import { connect } from 'react-redux'
 import { Dispatch } from 'redux';
 import { getCasesData, performDataFilter } from '../store/actions';
+
+// components
 import Layout from '../components/Layout';
 import Head from '../components/Head';
 import CardGridComponent from '../components/CardGridComponent';
 import FilterComponent from '../components/FilterComponent';
-import {NextPageContextWithRedux} from './_app'
+import ContactFormComponent from '../components/ContactForm';
+import RowContainer from '../components/RowContainer';
+import ColumnContainer from '../components/ColumnContainer';
 
+import {NextPageContextWithRedux} from './_app'
 import { getFilteredCases } from '../store/global/reducer';
 
 // types
@@ -48,6 +53,16 @@ const IndexPage = (props: IndexPageProps) => {
           filterIndustry={filtersApplied.industry}
           handleFilterChange={performDataFilter}/>
         <CardGridComponent cases={cases} displayValue={displayValue}/>
+      </div>
+      <div className="container">
+        <RowContainer>
+          <ColumnContainer md={4} sm={12}>
+            <h3 className="contact-text">QUESTION? WE ARE HERE TO HELP</h3>
+          </ColumnContainer>
+          <ColumnContainer md={8} sm={12}>
+            <ContactFormComponent />
+          </ColumnContainer>
+        </RowContainer>
       </div>
     </Layout>
   );
