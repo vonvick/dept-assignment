@@ -1,5 +1,3 @@
-import { setUrlData } from "../store/actions";
-
 export interface IndexPageProps {
   industries: string[],
   categories: string[],

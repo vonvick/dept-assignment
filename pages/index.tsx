@@ -9,11 +9,12 @@ import CardGridComponent from '../components/CardGridComponent';
 import FilterComponent from '../components/FilterComponent';
 import {NextPageContextWithRedux} from './_app'
 
-import { getFilteredCases } from '../store';
+import { getFilteredCases } from '../store/global/reducer';
 
 // types
 import { AppState } from '../types/state';
 import { IndexPageProps } from '../types/page';
+// import console = require('console');
 
 const IndexPage = (props: IndexPageProps) => {
   const {
@@ -63,7 +64,7 @@ IndexPage.getInitialProps = async({
 
 const mapStateToProps = ((state: AppState) => {
   return {
-    ...state,
+    ...state.global,
     cases: getFilteredCases(state)
   };
 })

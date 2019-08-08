@@ -1,4 +1,4 @@
-export interface AppState {
+export interface GlobalState {
   cases: any[],
   industries: any[],
   categories: any[],
@@ -8,4 +8,9 @@ export interface AppState {
     category: string,
     industry: string,
   }
+}
+
+export interface AppState {
+  global: GlobalState;
+  form: any;
 }
