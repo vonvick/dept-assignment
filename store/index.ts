@@ -1,6 +1,8 @@
 import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import thunkMiddleware from 'redux-thunk';
+import storage from 'redux-persist/lib/storage';
+import { persistReducer } from 'redux-persist';
 import _ from 'lodash';
 import { createSelector } from 'reselect';
 import {
@@ -107,9 +109,16 @@ export const getFilteredCases = createSelector(
   }
 )
 
+const persistConfig = {
+  key: 'root',
+  storage,
+  // stateReconciler: autoMergeLevel2,
+};
+const persistedReducer = persistReducer(persistConfig, reducer);
+
 export function initializeStore (initialState = appInitialState) {
   return createStore(
-    reducer,
+    persistedReducer,
     initialState,
     composeWithDevTools(applyMiddleware(thunkMiddleware))
   )
