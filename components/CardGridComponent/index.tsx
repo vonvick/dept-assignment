@@ -43,21 +43,6 @@ const GridComponent = ({ cases }: GridProps) => {
         {firstCasesList}
       </RowContainer>
       <RowContainer>
-        <ColumnContainer md={8} sm={12}>
-          <CardComponent
-            imageName={cases[4].imageName}
-            client={cases[4].client.toUpperCase()}
-            title={cases[4].title}/>
-        </ColumnContainer>
-        <ColumnContainer md={4} sm={12}>
-          <div className="other-cases">
-            <div className="other-case">
-
-            </div>
-          </div>
-        </ColumnContainer>
-      </RowContainer>
-      <RowContainer>
         {secondCasesList}
       </RowContainer>
       <RowContainer>
