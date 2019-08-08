@@ -19,6 +19,7 @@ This app was created using node version `10.16.0`.
 
 #### Others
 Here is the Lighthouse score
+![lighthouse score](./light-house-score.png)
 
 #### Tests
 In view
