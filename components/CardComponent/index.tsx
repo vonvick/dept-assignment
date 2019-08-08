@@ -45,7 +45,7 @@ const StyledCard = styled.div`
 const CardComponent = ({ imageName, client, title }: CardProps) => {
   const imageUrl = `../../static/Images/${imageName}.png`
   return (
-    <StyledCard>
+    <StyledCard tabIndex={-1} aria-label="card-item">
       <div className="image-container">
         <ImageComponent imageUrl={imageUrl} imageTitle={client}/>
       </div>

@@ -833,6 +833,11 @@
   dependencies:
     "@hapi/hoek" "8.x.x"
 
+"@now/next@^0.5.9":
+  version "0.5.9"
+  resolved "https://registry.yarnpkg.com/@now/next/-/next-0.5.9.tgz#8dbdca628a924128b2e6ae1682256a067824b728"
+  integrity sha512-ZAkK8cS6xqzhOKW+rywfH8tMz9pDVTv277ckNVQZlJiBLAhf4pg5n4vAl0Xit+xhAQSyt2BhnwgN1QqeCN+NSw==
+
 "@types/hoist-non-react-statics@^3.3.0":
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.1.tgz#1124aafe5118cb591977aeb1ceaaed1070eb039f"
