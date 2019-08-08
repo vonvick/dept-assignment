@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const StyledFilter = styled.div`
   margin: 100px 0 50px 0;
@@ -19,29 +19,31 @@ const StyledFilter = styled.div`
 interface FilterProps {
   industries: string[],
   categories: string[],
+  filterCategory: string,
+  filterIndustry: string,
   handleFilterChange: (value: string, type: string) => void,
 }
 
 const FilterComponent = (props: FilterProps) => {
-  const { industries, categories, handleFilterChange } = props;
+  const {
+    industries,
+    categories,
+    handleFilterChange,
+    filterCategory,
+    filterIndustry
+  } = props;
 
   const [selectedCategory, setSelectedCategory] = useState('')
   const [selectedIndustry, setSelectedIndustry] = useState('')
 
   const updateFilterQuery = (value: string, type: string) => {
-    switch(type) {
-      case 'category':
-        setSelectedCategory(value);
-        break;
-      case 'industry':
-        setSelectedIndustry(value)
-        break;
-      default:
-        return;
-    }
-
     handleFilterChange(value, type);
   }
+
+  useEffect(() => {
+    setSelectedCategory(filterCategory);
+    setSelectedIndustry(filterIndustry);
+  });
 
   return (
     <StyledFilter>
@@ -56,7 +58,11 @@ const FilterComponent = (props: FilterProps) => {
                 <option value="">All Categories</option>
                 { categories.map((category, index) => {
                   return (
-                    <option value={category} key={index}>{category}</option>
+                    <option
+                      value={category}
+                      key={index}>
+                      {category}
+                    </option>
                   )
                 })}
               </select>
@@ -71,7 +77,11 @@ const FilterComponent = (props: FilterProps) => {
                 <option value="">All Industries</option>
                 { industries.map((industry, index) => {
                   return (
-                    <option value={industry} key={index}>{industry}</option>
+                    <option
+                      value={industry}
+                      key={index}>
+                      {industry}
+                    </option>
                   )
                 })}
               </select>

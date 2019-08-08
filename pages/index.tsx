@@ -40,6 +40,8 @@ const IndexPage = (props: IndexPageProps) => {
         <FilterComponent
           industries={industries}
           categories={categories}
+          filterCategory={filtersApplied.category}
+          filterIndustry={filtersApplied.industry}
           handleFilterChange={performDataFilter}/>
         <CardGridComponent cases={cases}/>
       </div>
