@@ -12,6 +12,9 @@ const IndexLayout = styled.div`
     font-size: 42px;
     margin: 5px 0;
   }
+  .contact-container {
+    margin-bottom: 100px;
+  }
 `;
 
 const footerMenuItems = [

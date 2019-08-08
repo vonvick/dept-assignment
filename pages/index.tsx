@@ -54,7 +54,7 @@ const IndexPage = (props: IndexPageProps) => {
           handleFilterChange={performDataFilter}/>
         <CardGridComponent cases={cases} displayValue={displayValue}/>
       </div>
-      <div className="container">
+      <div className="container contact-container">
         <RowContainer>
           <ColumnContainer md={4} sm={12}>
             <h3 className="contact-text">QUESTION? WE ARE HERE TO HELP</h3>
