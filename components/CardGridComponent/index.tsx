@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { CardProps } from '../CardComponent';
+import React, { useEffect, useState } from 'react';
 
 // components
 import RowContainer from '../RowContainer';
@@ -8,6 +9,7 @@ import CardComponent from '../CardComponent';
 
 interface GridProps {
   cases: CardProps[];
+  displayValue: string,
 }
 
 const StyledGridContainer = styled.div`
@@ -17,12 +19,19 @@ const StyledGridContainer = styled.div`
   }
 `;
 
-const GridComponent = ({ cases }: GridProps) => {
+const GridComponent = ({ cases, displayValue }: GridProps) => {
+  const [selectedDisplayValue, setSelectedDisplayValue] = useState(6)
+
+  useEffect(() => {
+    const value = displayValue === 'grid' ? 6 : 12;
+    setSelectedDisplayValue(value);
+  }, [displayValue]);
+
   const casesDisplay = (items: any) => {
     return items.map((item: any, index: number) => {
       const { imageName, client, title } = item;
       return (
-        <ColumnContainer md={6} sm={12} key={index}>
+        <ColumnContainer md={selectedDisplayValue} sm={12} key={index}>
           <CardComponent
             imageName={imageName}
             client={client.toUpperCase()}

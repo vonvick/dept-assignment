@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Router from 'next/router';
 import { connect } from 'react-redux'
 import { Dispatch } from 'redux';
@@ -33,6 +33,8 @@ const IndexPage = (props: IndexPageProps) => {
     })
   }, [filtersApplied])
 
+  const [displayValue, setDisplayValue] = useState('grid');
+
   return (
     <Layout>
       <Head />
@@ -40,10 +42,11 @@ const IndexPage = (props: IndexPageProps) => {
         <FilterComponent
           industries={industries}
           categories={categories}
+          changeDisplayView={setDisplayValue}
           filterCategory={filtersApplied.category}
           filterIndustry={filtersApplied.industry}
           handleFilterChange={performDataFilter}/>
-        <CardGridComponent cases={cases}/>
+        <CardGridComponent cases={cases} displayValue={displayValue}/>
       </div>
     </Layout>
   );
