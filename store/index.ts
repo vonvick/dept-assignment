@@ -11,17 +11,8 @@ import {
   PERFORM_DATA_FILTER
 } from './action-types';
 
-export interface AppState {
-  cases: any[],
-  industries: any[],
-  categories: any[],
-  error: string,
-  loading: boolean,
-  filtersApplied: {
-    category: string,
-    industry: string,
-  }
-}
+// types
+import { AppState } from '../types/state';
 
 export const appInitialState: AppState = {
   cases: [],
