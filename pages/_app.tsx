@@ -5,7 +5,6 @@ import { ThemeProvider } from 'styled-components'
 import withReduxStore from '../lib/with-redux-store'
 import { Provider } from 'react-redux';
 import { persistStore, Persistor } from 'redux-persist';
-import { PersistGate } from 'redux-persist/integration/react';
 
 const theme = {
   colors: {
@@ -26,16 +25,15 @@ class MyApp extends App<NextPageContextWithRedux> {
     super(props);
     this.persistor = persistStore(this.props.reduxStore);
   }
+
   render () {
     const { Component, pageProps, reduxStore } = this.props
     return (
       <Container>
         <Provider store={reduxStore}>
-          <PersistGate persistor={this.persistor}>
-            <ThemeProvider theme={theme}>
-              <Component {...pageProps} />
-            </ThemeProvider>
-          </PersistGate>
+          <ThemeProvider theme={theme}>
+            <Component {...pageProps} />
+          </ThemeProvider>
         </Provider>
       </Container>
     )
