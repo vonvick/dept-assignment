@@ -2,6 +2,7 @@ import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import thunkMiddleware from 'redux-thunk';
 import _ from 'lodash';
+import { createSelector } from 'reselect';
 import {
   FETCH_DATA_BEGIN,
   FETCH_DATA_ERROR,
@@ -15,7 +16,11 @@ export interface AppState {
   industries: any[],
   categories: any[],
   error: string,
-  loading: boolean
+  loading: boolean,
+  filtersApplied: {
+    category: string,
+    industry: string,
+  }
 }
 
 export const appInitialState: AppState = {
@@ -23,7 +28,11 @@ export const appInitialState: AppState = {
   industries: [],
   categories: [],
   error: '',
-  loading: false
+  loading: false,
+  filtersApplied: {
+    category: '',
+    industry: '',
+  }
 }
 
 // REDUCERS
@@ -44,22 +53,18 @@ export const reducer = (state = appInitialState, action: any) => {
         error: payload
       }
     case PERFORM_DATA_FILTER:
-      const result = state.cases
-        .filter((item: any) => {
-          if (payload.category) {
-            return item.category === payload.category
-          }
-          return item;
-        })
-        .filter((item: any) => {
-          if (payload.industry) {
-            return item.industry === payload.industry
-          }
-          return item;
-        })
-      return Object.assign({}, state, {
-        cases: result
-      });
+      const filterState = state.filtersApplied;
+      state = Object.assign(state, {
+        filtersApplied:
+        {
+          ...filterState,
+          [payload.type]: payload.value
+        }
+      })
+
+      return {
+        ...state
+      }
     case FETCH_DATA_SUCCESS:
       return {
         ...state,
@@ -85,6 +90,31 @@ export const reducer = (state = appInitialState, action: any) => {
       return state
   }
 }
+
+const getFiltersApplied = (state: AppState) => state.filtersApplied;
+const getCases = (state: AppState) => state.cases;
+
+export const getFilteredCases = createSelector(
+  [getFiltersApplied, getCases],
+  (appliedFilters: any, cases: any[]) => {
+    if (appliedFilters.category && appliedFilters.industry){
+      return cases.filter((item: any) => {
+        return item.category === appliedFilters.category && item.industry === appliedFilters.industry;
+      });
+
+    } else if (appliedFilters.category && !appliedFilters.industry) {
+      return cases.filter((item: any) => {
+        return item.category === appliedFilters.category;
+      });
+    } else if (!appliedFilters.category && appliedFilters.industry) {
+      return cases.filter((item: any) => {
+        return item.industry === appliedFilters.industry;
+      });
+    } else {
+      return cases;
+    }
+  }
+)
 
 export function initializeStore (initialState = appInitialState) {
   return createStore(
