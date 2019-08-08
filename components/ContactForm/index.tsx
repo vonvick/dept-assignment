@@ -43,14 +43,12 @@ interface FormProps {
   name?: string;
   email?: string;
   message?: string;
-  handleSubmitForm?: () => void;
 };
 
 interface FormData {
   name?: string;
   email?: string;
   message?: string;
-  handleSubmitForm?: () => void;
 }
 
 interface InjectedProps extends InjectedFormProps<FormProps> { }
@@ -94,10 +92,10 @@ const renderField = ({
 )
 
 let ContactForm = (props: ComponentProps) => {
-  const { handleSubmitForm, name, email, message } = props;
+  const { reset } = props;
   return (
     <StyledForm>
-      <form onSubmit={handleSubmitForm}>
+      <form onSubmit={ reset }>
         <Field
           name="name"
           component={renderField}
