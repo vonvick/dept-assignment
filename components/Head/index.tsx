@@ -8,6 +8,13 @@ const Head = () => {
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1"/>
 
+      <meta name="theme-color" content="#72B340" />
+      <link rel="manifest" href="/static/manifest.json" />
+
+      <meta
+        name="description"
+        content="make your Next.js application work offline using service workers via Google's workbox"
+      />
       <link
         href="https://fonts.googleapis.com/css?family=Teko:300,400,500,600,700&display=swap"
         rel="stylesheet"/>
