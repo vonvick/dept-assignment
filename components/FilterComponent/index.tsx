@@ -61,7 +61,7 @@ const FilterComponent = (props: FilterProps) => {
   useEffect(() => {
     setSelectedCategory(filterCategory);
     setSelectedIndustry(filterIndustry);
-  });
+  }, [filterCategory, filterIndustry]);
 
   return (
     <StyledFilter>

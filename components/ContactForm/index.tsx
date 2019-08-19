@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Field, reduxForm, InjectedFormProps, formValueSelector } from 'redux-form';
+import { Field, reduxForm, InjectedFormProps } from 'redux-form';
 
 import Button from '../Button';
 
@@ -125,8 +125,6 @@ let ContactForm = (props: ComponentProps) => {
   );
 };
 const formName = 'contact';
-
-interface UnconnectedProps extends InjectedProps { }
 
 const ContactReduxForm = reduxForm<FormData>({
   form: formName

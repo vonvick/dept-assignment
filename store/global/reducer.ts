@@ -12,6 +12,11 @@ import {
   PERFORM_DATA_FILTER
 } from '../action-types';
 
+interface appliedFilters {
+  category: string;
+  industry: string;
+};
+
 export const appInitialState: GlobalState = {
   cases: [],
   industries: [],
@@ -27,7 +32,7 @@ export const appInitialState: GlobalState = {
 const getFiltersApplied = ({ global }: AppState) => global.filtersApplied;
 const getCases = ({ global }: AppState) => global.cases;
 
-export const getFilteredCases = createSelector([getFiltersApplied, getCases], (appliedFilters: any, cases: any[]) => {
+export const getFilteredCases = createSelector([getFiltersApplied, getCases], (appliedFilters: appliedFilters, cases: any[]) => {
   if (appliedFilters.category && appliedFilters.industry) {
     return cases.filter((item: any) => {
       return item.category === appliedFilters.category && item.industry === appliedFilters.industry;
