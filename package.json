@@ -10,7 +10,7 @@
     "@now/next": "^0.5.9",
     "@types/styled-components": "^4.1.18",
     "isomorphic-unfetch": "^3.0.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "next": "latest",
     "next-offline": "^4.0.3",
     "react": "^16.7.0",
